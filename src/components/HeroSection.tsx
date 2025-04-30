@@ -16,11 +16,11 @@ const HeroSection: React.FC = () => {
             </p>
             <div className="flex flex-wrap gap-4">
               <Button size="lg">
-                <Icon name="FileSearch" />
+                <Icon name="FileSearch" className="mr-2" />
                 Подобрать персонал
               </Button>
               <Button variant="outline" size="lg">
-                <Icon name="Info" />
+                <Icon name="Info" className="mr-2" />
                 Узнать больше
               </Button>
             </div>
