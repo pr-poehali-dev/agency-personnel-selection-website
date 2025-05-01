@@ -1,62 +1,66 @@
 import React from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import Icon from '@/components/ui/icon';
 
 const ServicesSection: React.FC = () => {
   const services = [
     {
-      icon: 'UserSearch',
-      title: 'Подбор линейного персонала',
-      description: 'Поиск и подбор квалифицированных сотрудников на линейные позиции в кратчайшие сроки.'
+      icon: "Briefcase",
+      title: "Подбор линейного персонала",
+      description: "Быстрый подбор специалистов среднего звена для различных отделов вашей компании."
     },
     {
-      icon: 'Users',
-      title: 'Подбор руководителей',
-      description: 'Находим талантливых руководителей среднего и высшего звена с проверенным опытом управления.'
+      icon: "Users",
+      title: "Рекрутинг руководителей",
+      description: "Поиск топ-менеджеров и директоров с опытом управления и необходимыми компетенциями."
     },
     {
-      icon: 'GraduationCap',
-      title: 'Подбор редких специалистов',
-      description: 'Поиск узкопрофильных специалистов с редкими навыками и компетенциями.'
+      icon: "Search",
+      title: "Хедхантинг",
+      description: "Целенаправленный поиск и привлечение конкретных специалистов из компаний-конкурентов."
     },
     {
-      icon: 'FileSearch',
-      title: 'Проверка кандидатов',
-      description: 'Тщательная проверка кандидатов, включая рекомендации, психологическое тестирование.'
+      icon: "ClipboardCheck",
+      title: "Массовый подбор",
+      description: "Комплектация штата при открытии филиалов или запуске новых проектов."
     },
     {
-      icon: 'BarChart',
-      title: 'Аналитика рынка труда',
-      description: 'Предоставляем актуальную информацию о трендах и зарплатах в вашей отрасли.'
+      icon: "UserCheck",
+      title: "Оценка персонала",
+      description: "Профессиональная оценка компетенций кандидатов и действующих сотрудников."
     },
     {
-      icon: 'HeartHandshake',
-      title: 'Консультации по HR',
-      description: 'Профессиональные консультации по вопросам управления персоналом и HR-стратегии.'
+      icon: "Lightbulb",
+      title: "HR-консалтинг",
+      description: "Консультации по вопросам найма, мотивации и удержания персонала."
     }
   ];
 
   return (
-    <section id="services" className="py-20 bg-gray-50">
+    <section id="services" className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold mb-4">Наши услуги</h2>
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold mb-3">Наши услуги</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Предлагаем комплексные решения для эффективного подбора персонала и развития кадрового потенциала вашей компании.
+            Мы предлагаем полный спектр услуг по подбору персонала и HR-консалтингу для компаний любого масштаба и сферы деятельности.
           </p>
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
-            <Card key={index} className="border-none shadow-md hover:shadow-lg transition-shadow">
+            <Card key={index} className="hover:shadow-lg transition-shadow border-t-4 border-t-primary">
               <CardHeader className="pb-2">
-                <div className="mb-2 text-primary">
-                  <Icon name={service.icon} size={32} />
+                <div className="flex items-center mb-2">
+                  <div className="mr-3 text-primary">
+                    <Icon name={service.icon} size={24} />
+                  </div>
+                  <CardTitle className="text-xl">{service.title}</CardTitle>
                 </div>
-                <CardTitle>{service.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-base">{service.description}</CardDescription>
+                <CardDescription className="text-gray-600">
+                  {service.description}
+                </CardDescription>
               </CardContent>
             </Card>
           ))}
